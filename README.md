@@ -68,3 +68,26 @@ app.js          # Main Express app entry point
 
 ## License
 MIT 
+
+## About the Template Engine: EJS
+
+[EJS](https://ejs.co/) (Embedded JavaScript) is a simple templating language that lets you generate HTML markup with plain JavaScript. It is used in this project for server-side rendering of views.
+
+### How EJS is Used Here
+- All UI pages (login, register, todo list) are rendered using `.ejs` templates in the `views/` directory.
+- Data from controllers is passed to EJS templates and rendered into HTML before being sent to the browser.
+- EJS allows embedding JavaScript logic (like loops and conditionals) directly in your HTML.
+
+### Basic EJS Syntax Example
+```ejs
+<ul>
+  <% todos.forEach(todo => { %>
+    <li><%= todo.title %></li>
+  <% }) %>
+</ul>
+```
+- `<% ... %>`: Run JavaScript code (no output)
+- `<%= ... %>`: Output the value (escaped)
+- `<%- ... %>`: Output unescaped HTML
+
+For more, see the [EJS documentation](https://ejs.co/#docs). 
