@@ -1,0 +1,95 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.add-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.add-form input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.add-form button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.add-form button:hover {
+  background: #0056b3;
+}
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.todo-item:last-child {
+  border-bottom: none;
+}
+.todo-item.completed span {
+  text-decoration: line-through;
+  color: #aaa;
+}
+.toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  margin-right: 0.75rem;
+  cursor: pointer;
+}
+.delete-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 1.1rem;
+  margin-left: 0.75rem;
+  cursor: pointer;
+}
+.empty {
+  text-align: center;
+  color: #bbb;
+  padding: 1rem 0;
+}
+.error {
+  background: #ffe0e0;
+  color: #c00;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+} 

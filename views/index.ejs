@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Todo App</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <nav style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 1rem; gap: 1rem;">
+      <% if (currentUser) { %>
+        <span>Logged in as <%= currentUser.email %></span>
+        <form action="/logout" method="POST" style="display:inline;">
+          <button type="submit">Logout</button>
+        </form>
+      <% } else { %>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+      <% } %>
+    </nav>
+    <h1>Todo List</h1>
+    <form action="/add" method="POST" class="add-form">
+      <input type="text" name="title" placeholder="Add a new todo..." required autofocus>
+      <button type="submit">Add</button>
+    </form>
+    <ul class="todo-list">
+      <% if (todos.length === 0) { %>
+        <li class="empty">No todos yet!</li>
+      <% } %>
+      <% todos.forEach(todo => { %>
+        <li class="todo-item <%= todo.completed ? 'completed' : '' %>">
+          <form action="/toggle/<%= todo.id %>" method="POST" style="display:inline;">
+            <button type="submit" class="toggle-btn"><%= todo.completed ? '✔' : '○' %></button>
+          </form>
+          <span><%= todo.title %></span>
+          <form action="/delete/<%= todo.id %>" method="POST" style="display:inline;">
+            <button type="submit" class="delete-btn">🗑</button>
+          </form>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</body>
+</html> 
